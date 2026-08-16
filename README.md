@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO / BANNER -->
 <div align="center">
   <a href="https://github.com/Dilkhushkumardev/C-language">
-    <img src="https://via.placeholder.com/1200x300/00599C/FFFFFF?text=C+Language+Mastery+%7C+Learn+Code+Practice" alt="C Language Mastery Banner" width="100%">
+    <img src="https://placehold.co/1200x300/00599C/FFFFFF?text=C+Language+Mastery+%7C+Learn+Code+Practice" alt="C Language Mastery Banner" width="100%">
   </a>
 
   <h1>🚀 C Language Mastery</h1>
@@ -73,3 +73,5 @@
 ---
 
 ## 📂 Folder Structure
+
+Yeh rahi is repository ki complete folder structure:
