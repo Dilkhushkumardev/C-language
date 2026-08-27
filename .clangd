@@ -1,5 +1,6 @@
 CompileFlags:
   Add:
-    - -IC:/msys64/ucrt64/include
-    - -IC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include
-  Compiler: C:/msys64/ucrt64/bin/gcc.exe
+    - --target=x86_64-w64-windows-gnu
+    - -isystemC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include
+    - -isystemC:/msys64/ucrt64/include
+    - -isystemC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include-fixed
