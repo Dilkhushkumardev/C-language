@@ -11,8 +11,5 @@
     "stdio.h": "c",
     "math.h": "c"
   },
-  "yaml.schemas": {
-    "https://json.schemastore.org/clangd.json": ".clangd"
-  },
   "C_Cpp.errorSquiggles": "enabled"
 }
