@@ -11,5 +11,9 @@
     "stdio.h": "c",
     "math.h": "c"
   },
-  "C_Cpp.errorSquiggles": "enabled"
+  "C_Cpp.errorSquiggles": "enabled",
+  "yaml.schemaStore.enable": false,
+  "yaml.schemas": {
+    "IGNORE": ["**/.clangd", ".clangd"]
+  }
 }
