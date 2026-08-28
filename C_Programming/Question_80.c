@@ -1,12 +1,15 @@
-// Check wheather a sentence is palimdropme or not
+// Check whether a sentence is a palindrome or not
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+
 #define MAX 100
+
 int main()
 {
   char str[MAX];
-  int i, len, flag = 1;
+  int start = 0, end;
+  int flag = 1;
 
   printf("Enter a sentence: ");
   fgets(str, sizeof(str), stdin);
@@ -14,15 +17,27 @@ int main()
   // Remove newline character if present
   str[strcspn(str, "\n")] = 0;
 
-  len = strlen(str);
+  end = strlen(str) - 1;
 
-  for (i = 0; i < len / 2; i++)
+  while (start < end)
   {
-    if (tolower(str[i]) != tolower(str[len - i - 1]))
+    // Skip non-alphanumeric characters (spaces, punctuation)
+    while (start < end && !isalnum((unsigned char)str[start]))
+    {
+      start++;
+    }
+    while (start < end && !isalnum((unsigned char)str[end]))
+    {
+      end--;
+    }
+
+    if (tolower((unsigned char)str[start]) != tolower((unsigned char)str[end]))
     {
       flag = 0;
       break;
     }
+    start++;
+    end--;
   }
 
   if (flag)

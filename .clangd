@@ -1,6 +1,9 @@
+# yaml-language-server: $schema=https://json.schemastore.org/clangd.json
 CompileFlags:
+  Compiler: C:/msys64/ucrt64/bin/gcc.exe
   Add:
-    - --target=x86_64-w64-windows-gnu
-    - -isystemC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include
+    - --target=x86_64-w64-mingw32
     - -isystemC:/msys64/ucrt64/include
+    - -isystemC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include
     - -isystemC:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include-fixed
+
