@@ -1,5 +1,5 @@
-//insertion sort\
- #include <stdio.h>  
+//insertion sort
+#include <stdio.h>  
   
 void insert(int a[], int n) /* function to sort an aay with insertion sort */  
 {  

@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <conio.h>
-void main()
+
+int main()
 {
   int i;
   i = 0;
@@ -12,5 +12,5 @@ void main()
   {
     printf("skills %d", i);
   }
-  getch();
+  return 0;
 }

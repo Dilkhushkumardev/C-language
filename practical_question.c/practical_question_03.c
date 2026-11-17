@@ -1,13 +1,14 @@
 //insertion or deletion
 #include <stdio.h>
-# define SIZE 100
+#include <stdlib.h>
+#define SIZE 100
 void enqueue();
 void dequeue();
 void show();
 int inp_arr[SIZE];
 int Rear = - 1;
 int Front = - 1;
-main()
+int main()
 {
     int ch;
     while (1)
@@ -35,6 +36,7 @@ main()
             printf("Incorrect choice \n");
         } 
     } 
+    return 0;
 } 
  
 void enqueue()

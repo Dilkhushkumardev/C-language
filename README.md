@@ -7,6 +7,9 @@
 
   <!-- BADGES -->
   <p align="center">
+    <a href="https://github.com/Dilkhushkumardev/C-language/actions/workflows/c-cpp.yml">
+      <img src="https://img.shields.io/github/actions/workflow/status/Dilkhushkumardev/C-language/c-cpp.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white" alt="Build Status" />
+    </a>
     <a href="https://github.com/Dilkhushkumardev/C-language/stargazers">
       <img src="https://img.shields.io/github/stars/Dilkhushkumardev/C-language?style=for-the-badge&logo=apachespark&color=f59e0b&logoColor=white" alt="Stars" />
     </a>
@@ -34,10 +37,10 @@
 
   <!-- QUICK ACTION BUTTONS -->
   <p align="center">
-    <a href="#-table-of-contents">🧭 Explore Topics</a> •
-    <a href="#-how-to-compile--run">⚡ Run Code</a> •
-    <a href="#-repository-structure">📂 Folder Map</a> •
-    <a href="#-contributing">🤝 Contribute</a> •
+    <a href="#table-of-contents">🧭 Explore Topics</a> •
+    <a href="#how-to-compile--run">⚡ Run Code</a> •
+    <a href="#repository-structure">📂 Folder Map</a> •
+    <a href="#contributing">🤝 Contribute</a> •
     <a href="https://github.com/Dilkhushkumardev/C-language/issues/new">🐛 Report Issue</a>
   </p>
 
@@ -84,16 +87,16 @@ Whether you are a university student preparing for semester practicals, a beginn
 
 ## 🧭 Table of Contents
 
-- [📖 Overview](#-overview)
-- [✨ Key Highlights](#-key-highlights)
-- [📚 Curriculum & Topics Covered](#-curriculum--topics-covered)
-- [📂 Repository Structure](#-repository-structure)
-- [⚡ How to Compile & Run](#-how-to-compile--run)
-- [💡 Featured Coding Exercises](#-featured-coding-exercises)
-- [🛠️ Recommended Setup (VS Code)](#️-recommended-setup-vs-code)
-- [🤝 Contributing](#-contributing)
-- [📜 License](#-license)
-- [🌟 Show Your Support](#-show-your-support)
+- [📖 Overview](#overview)
+- [✨ Key Highlights](#key-highlights)
+- [📚 Curriculum & Topics Covered](#curriculum--topics-covered)
+- [📂 Repository Structure](#repository-structure)
+- [⚡ How to Compile & Run](#how-to-compile--run)
+- [💡 Featured Coding Exercises](#featured-coding-exercises)
+- [🛠️ Recommended Setup (VS Code)](#recommended-setup-vs-code)
+- [🤝 Contributing](#contributing)
+- [📜 License](#license)
+- [🌟 Show Your Support](#show-your-support)
 
 ---
 
@@ -216,18 +219,28 @@ Here is a quick snapshot of common problems solved inside this repository:
 
 int main() {
     char str[MAX];
-    int i, len, flag = 1;
+    int left, right, flag = 1;
 
     printf("Enter a sentence: ");
     fgets(str, sizeof(str), stdin);
     str[strcspn(str, "\n")] = 0; // Strip trailing newline
 
-    len = strlen(str);
-    for (i = 0; i < len / 2; i++) {
-        if (tolower(str[i]) != tolower(str[len - i - 1])) {
+    left = 0;
+    right = strlen(str) - 1;
+
+    while (left < right) {
+        while (left < right && !isalnum((unsigned char)str[left])) {
+            left++;
+        }
+        while (left < right && !isalnum((unsigned char)str[right])) {
+            right--;
+        }
+        if (tolower((unsigned char)str[left]) != tolower((unsigned char)str[right])) {
             flag = 0;
             break;
         }
+        left++;
+        right--;
     }
 
     if (flag)
@@ -298,7 +311,7 @@ To get the most productive coding experience with this repository:
 
 Contributions are warmly welcomed! Whether it's adding new problems, optimizing algorithms, fixing typos, or adding comments:
 
-1. **Fork** the project (`https://github.com/Dilkhushkumardev/C-language/fork`)
+1. **Fork** the project ([Fork Repository](https://github.com/Dilkhushkumardev/C-language/fork))
 2. **Create** your Feature Branch (`git checkout -b feature/NewProblem`)
 3. **Commit** your Changes (`git commit -m 'Add solution for Matrix Inversion'`)
 4. **Push** to the Branch (`git push origin feature/NewProblem`)

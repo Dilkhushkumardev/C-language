@@ -8,16 +8,43 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up GCC compiler
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc
+
+    - name: Compile and verify all C programs
+      run: |
+        echo "========================================"
+        echo "  Verifying C Programs Syntax & Build   "
+        echo "========================================"
+        status=0
+        count=0
+
+        while IFS= read -r file; do
+          if [ -f "$file" ]; then
+            count=$((count + 1))
+            echo "Checking: $file"
+            if ! gcc -fsyntax-only "$file" -lm; then
+              echo "::error file=$file::Syntax/compilation error in $file"
+              status=1
+            fi
+          fi
+        done < <(find . -type f -name "*.c")
+
+        echo "========================================"
+        echo "Total C files checked: $count"
+        echo "========================================"
+
+        if [ "$status" -ne 0 ]; then
+          echo "❌ Some C programs failed compilation."
+          exit 1
+        fi
+
+        echo "✅ All $count C programs compiled successfully!"
